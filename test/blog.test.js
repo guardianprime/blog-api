@@ -1,4 +1,5 @@
 jest.setTimeout(20000);
+require("./setup");
 const request = require("supertest");
 const app = require("../app");
 

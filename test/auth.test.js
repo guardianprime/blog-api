@@ -1,4 +1,5 @@
 jest.setTimeout(20000);
+require("./setup");
 const request = require("supertest");
 const app = require("../app");
 
@@ -10,6 +11,7 @@ describe("Auth Endpoints", () => {
       email: "test@example.com",
       password: "password123",
     });
+    console.log(res.body);
     expect(res.statusCode).toBe(201);
     expect(res.body).toHaveProperty("token");
   });
